@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EVL - Eternia Volleyball League presents Monsoon Smash Season 3. Discover elite volleyball teams, high-stakes matches, and real-time telemetry.">
+  <meta name="keywords" content="Volleyball League, Monsoon Smash, EVL, Competitive Volleyball, Sports Tournament, Season 3, Telemetry">
+  <meta name="author" content="Antigravity AI">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <title>EVL | Monsoon Smash Season 3</title>
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main CSS Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Background Interactive Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Ambient Light Energy Leaks in Background -->
+  <div class="ambient-lights">
+    <div class="light-leak light-leak-blue"></div>
+    <div class="light-leak light-leak-orange"></div>
+  </div>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION
+       ========================================== -->
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="#" class="logo-wrapper">
+        <img src="assets/logo.png" alt="EVL Logo" class="logo-img">
+        <h1 class="logo-text">EVL</h1>
+        <span class="logo-sub">Eternia Volleyball League</span>
+      </a>
+      
+      <div class="header-follow">
+        <span class="follow-lbl">Follow Us</span>
+        <a href="#" class="follow-icon" aria-label="Follow Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="follow-icon" aria-label="Follow YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO BANNER
+       ========================================== -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      
+      <!-- Hero Content Column (Left) -->
+      <div class="hero-content">
+        <!-- Season 3 tag with horizontal lines -->
+        <div class="season-tag-row">
+          <div class="season-tag-line"></div>
+          <span class="season-tag-text">Season 3</span>
+          <div class="season-tag-line"></div>
+        </div>
+        
+        <span class="present-text">EVL Presents,</span>
+        <h2 class="monsoon-title">Monsoon</h2>
+        <h3 class="smash-title">Smash</h3>
+        
+        <!-- Coming Soon Ticker line -->
+        <div class="coming-soon-banner">
+          <div class="soon-tag-line-short"></div>
+          <span>Coming Soon</span>
+          <div class="soon-tag-line-short"></div>
+        </div>
+        
+        <!-- Storm alert status tag -->
+        <div class="storm-alert-text">
+          <i class="fa-solid fa-bolt"></i>
+          <span>A New Season. A Bigger Storm.</span>
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        
+        <p class="storm-desc">
+          Bigger teams. Bigger battles. Greater glory. The game you love is stepping onto a high-stakes, storm-swept arena. Witness volleyball performance redrawn.
+        </p>
+        
+        <!-- Two Highlight Cards side-by-side -->
+        <div class="features-container">
+          <div class="feature-mini-card">
+            <div class="f-icon-circle">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="f-text-box">
+              <span class="f-title">Elite Teams</span>
+              <span class="f-desc">Top clubs. One champion.</span>
+            </div>
+          </div>
+          
+          <div class="feature-mini-card">
+            <div class="f-icon-circle">
+              <i class="fa-solid fa-bolt-lightning"></i>
+            </div>
+            <div class="f-text-box">
+              <span class="f-title">Real Action</span>
+              <span class="f-desc">Live matches. Real thrill.</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Splashing Volleyball Slogan Banner -->
+        <div class="slogan-banner">
+          <div class="slogan-splash-ball">
+            <img src="assets/logo.png" alt="Splashing Volleyball">
+          </div>
+          <div class="slogan-text">
+            THE GAME IS ABOUT TO CHANGE.
+            <span class="highlight-bold">Don't Just Watch. Be Part Of It.</span>
+          </div>
+        </div>
+        
+        <!-- Simplified Newsletter Sign-Up Notify Form -->
+        <div class="notify-wrapper">
+          <form class="notify-form" id="newsletter-form">
+            <input type="email" placeholder="Enter your email" class="notify-input" required id="hero-email-input">
+            <button type="submit" class="notify-btn" id="hero-submit-btn">Notify Me</button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Hero Graphic visual column (Right) -->
+      <div class="hero-visual">
+        <!-- Energy watercolor paint splash & compass layers -->
+        <div class="energy-splash-container">
+          <div class="ink-splash ink-splash-1"></div>
+          <div class="ink-splash ink-splash-2"></div>
+          <div class="cyber-compass-ring"></div>
+        </div>
+        
+        <div class="artwork-frame" id="hero-artwork-frame">
+          <img src="assets/hero-graphic.png" alt="EVL Monsoon Smash Season 3 Championship Shield" class="artwork-img">
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ==========================================
+       TELEMETRY DASHBOARD SECTION
+       ========================================== -->
+  <section id="telemetry" class="telemetry-section">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag">// Match Analytics</span>
+        <h2 class="section-title">Storm <span>Telemetry</span></h2>
+        <p class="section-desc">Experience live data feeds. Track team spike speeds, jump verticals, and serve patterns redrawn in real-time spline coordinate grids.</p>
+      </div>
+      
+      <!-- Premium Canvas Spline Graph Card -->
+      <div class="telemetry-card" id="telemetry-card">
+        <div class="telemetry-header">
+          <h3 class="telemetry-title"><i class="fa-solid fa-wave-square"></i> Real-time Telemetry</h3>
+          <select class="telemetry-select" id="telemetry-data-select">
+            <option value="spike">Spike Velocity (km/h)</option>
+            <option value="leap">Jump Height (cm)</option>
+            <option value="accuracy">Serve Accuracy (%)</option>
+          </select>
+        </div>
+        
+        <!-- Graph Plot Container -->
+        <div class="chart-wrapper">
+          <canvas id="telemetry-canvas"></canvas>
+        </div>
+        
+        <div class="telemetry-stats-row">
+          <div class="t-stat-item">
+            <div class="t-stat-val blue-text" id="t-stat-peak">136.2</div>
+            <div class="t-stat-lbl" id="t-stat-lbl-1">Peak Speed</div>
+          </div>
+          <div class="t-stat-item">
+            <div class="t-stat-val orange-text" id="t-stat-avg">118.4</div>
+            <div class="t-stat-lbl" id="t-stat-lbl-2">Average Velocity</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ROSTER ENTRY & REGISTRATIONS PANEL
+       ========================================== -->
+  <section id="roster" class="roster-section" style="padding-bottom: 8rem;">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-tag">// Player Entryway</span>
+        <h2 class="section-title">Join The <span>Roster Draft</span></h2>
+        <p class="section-desc">Apply for the player draft registry. Submit your email and undergo statistical verification to alert franchise selectors.</p>
+      </div>
+      
+      <!-- Roster Card -->
+      <div class="roster-card" id="roster-pane-main">
+        
+        <!-- Registration Form Elements -->
+        <form id="roster-form" autocomplete="on">
+          <div id="roster-form-body">
+            <h3>Submit Roster Draft Registration</h3>
+            <p class="roster-subtitle">Apply for draft selection. Enter your email to begin your athlete statistics verification and telemetry auditing.</p>
+            
+            <!-- Compact Email Input wrapper inside the panel -->
+            <div class="notify-wrapper" style="max-width: 550px; margin: 1.5rem auto 0;">
+              <div class="notify-form">
+                <input type="email" placeholder="Enter your email to apply for draft" class="notify-input" required id="roster-email-input">
+                <button type="submit" class="notify-btn" id="roster-submit-btn">Submit Entry</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Submission Success screen (hidden initially) -->
+          <div class="roster-success-pane" id="roster-success-pane" style="display: none;">
+            <div class="success-icon-box"><i class="fa-solid fa-check-double"></i></div>
+            <h3 class="success-title">Roster Application Sent</h3>
+            <p class="success-desc">
+              Your profile is registered in our data auditing registry. Our franchise scouts have been alerted of your application. Let's make this season legendary!
+            </p>
+            <button type="button" class="glow-btn glow-btn-blue" id="success-reset-btn" style="margin: 0 auto; display: block;">Apply Another Roster</button>
+          </div>
+        </form>
+        
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ==========================================
+       COUNTDOWN TIMER SECTION
+       ========================================== -->
+  <section class="countdown-section">
+    <div class="container countdown-wrapper">
+      <span class="section-tag">// Season 3 Launch Ticker</span>
+      <h2 class="section-title" style="margin-bottom: 1rem;">Registrations Start <span>June 1</span></h2>
+      <p class="section-desc" style="max-width: 500px; margin: 0 auto;">Count down the days, hours, and seconds until the official roster draft registrations launch.</p>
+      
+      <!-- High Tech Cyberpunk Ticker Grid -->
+      <div class="countdown-grid" id="countdown-grid">
+        <div class="countdown-box">
+          <div class="countdown-num" id="countdown-days">24</div>
+          <div class="countdown-lbl">Days</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-num" id="countdown-hours">15</div>
+          <div class="countdown-lbl">Hours</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-num" id="countdown-minutes">48</div>
+          <div class="countdown-lbl">Minutes</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-num" id="countdown-seconds">36</div>
+          <div class="countdown-lbl">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-copy">
+        &copy; 2024 Eternia Volleyball League. All rights reserved.
+      </div>
+      <ul class="footer-links">
+        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+        <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
