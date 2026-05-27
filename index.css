@@ -59,6 +59,7 @@ body {
   overflow-x: hidden;
   max-width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   background-color: var(--bg-primary);
   background-image: radial-gradient(
@@ -116,6 +117,7 @@ section {
   left: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   z-index: 1;
   pointer-events: none;
 }
@@ -137,6 +139,7 @@ section {
   filter: blur(140px);
   opacity: 0.08;
   mix-blend-mode: screen;
+  will-change: transform;
 }
 
 .light-leak-blue {
@@ -268,6 +271,7 @@ header.scrolled {
    ========================================== */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   padding-top: 100px;
@@ -478,6 +482,7 @@ header.scrolled {
   height: 46px;
   flex-shrink: 0;
   animation: float 3s infinite ease-in-out alternate;
+  will-change: transform;
 }
 
 .slogan-splash-ball img {
@@ -493,13 +498,14 @@ header.scrolled {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(0, 240, 255, 0.2);
   animation: ripple 2s infinite ease-out;
   pointer-events: none;
+  will-change: transform, opacity;
 }
 
 .slogan-text {
@@ -552,6 +558,7 @@ header.scrolled {
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   filter: blur(25px);
   animation: rotate-clockwise 40s linear infinite;
+  will-change: transform;
 }
 
 .ink-splash-1 {
@@ -586,6 +593,7 @@ header.scrolled {
   border-radius: 50%;
   z-index: 2;
   animation: rotate-clockwise 35s linear infinite;
+  will-change: transform;
 }
 
 .cyber-compass-ring::after {
@@ -620,6 +628,7 @@ header.scrolled {
   aspect-ratio: 1.05;
   transform-style: preserve-3d;
   transition: transform var(--transition-slow);
+  will-change: transform;
 }
 
 .artwork-img {
@@ -1068,13 +1077,11 @@ footer {
 
 @keyframes ripple {
   0% {
-    width: 40px;
-    height: 40px;
+    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
   100% {
-    width: 85px;
-    height: 85px;
+    transform: translate(-50%, -50%) scale(2.125);
     opacity: 0;
   }
 }
@@ -1226,5 +1233,68 @@ footer {
   }
   .countdown-num {
     font-size: 2.25rem;
+  }
+}
+
+/* ==========================================
+   SAFARI & IOS HIGH-PERFORMANCE STYLE OVERRIDES
+   ========================================== */
+.is-safari .light-leak {
+  filter: blur(60px); /* Significant blur radius reduction to prevent GPU painting bottlenecks */
+  mix-blend-mode: normal; /* mix-blend-mode: screen is extremely slow in Safari on heavy scrolling */
+  opacity: 0.05; /* fallback standard opacity blending */
+}
+
+.is-safari .ink-splash {
+  filter: blur(12px); /* Reduce blur calculation overhead on rotating ink canvases */
+}
+
+.is-safari header {
+  backdrop-filter: blur(6px); /* Lighter blur filters run smoother in Safari during sticky scroll */
+  background: rgba(2, 4, 10, 0.85); /* Slightly increased opacity for identical visual contrast */
+}
+
+.is-safari header.scrolled {
+  background: rgba(2, 4, 10, 0.95);
+}
+
+.is-safari .artwork-img {
+  /* Lighter, hardware-accelerated drop shadow for tilted logo */
+  filter: drop-shadow(0 8px 16px rgba(0, 240, 255, 0.15));
+}
+
+.is-safari .slogan-splash-ball img {
+  /* Simpler static drop shadow to prevent frame stuttering on animated elements */
+  filter: drop-shadow(0 4px 8px rgba(0, 240, 255, 0.2));
+}
+
+/* ==========================================
+   ACCESSIBILITY: SUPPORT PREFERS REDUCED MOTION
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: scroll !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    will-change: auto !important;
+  }
+  .artwork-frame {
+    transform: none !important;
+  }
+  .slogan-splash-ball {
+    animation: none !important;
+  }
+  .light-leak-blue, .light-leak-orange {
+    animation: none !important;
+  }
+  .ink-splash-1, .ink-splash-2 {
+    animation: none !important;
+  }
+  .cyber-compass-ring {
+    animation: none !important;
   }
 }
